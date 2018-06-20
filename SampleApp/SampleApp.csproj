@@ -32,7 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,9 +54,26 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleInjector\SampleAppInjectorModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DeploymentScripts\AdventureWorks-oltp-install-script.zip" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleApp.Core\SampleApp.Core.csproj">
+      <Project>{15205949-2B95-42FA-96DD-B1B40DC8396E}</Project>
+      <Name>SampleApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Services\SampleApp.Services.csproj">
+      <Project>{8A659EC2-2B9E-46E7-B698-6CFAB730A4EF}</Project>
+      <Name>SampleApp.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SampleApp.Utilities\SampleApp.Utilities.csproj">
+      <Project>{87B4B805-03DD-40FC-A0C3-75B074800EFD}</Project>
+      <Name>SampleApp.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
