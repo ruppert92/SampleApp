@@ -1,13 +1,9 @@
-﻿using SampleApp.Services.EF;
+﻿using Microsoft.EntityFrameworkCore;
+using SampleApp.Services.Data;
 using SampleApp.Services.Interfaces;
 using SampleApp.Services.Services;
 using SimpleInjector;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleApp.Services.SimpleInjector
 {
@@ -15,7 +11,8 @@ namespace SampleApp.Services.SimpleInjector
     {
         public static void LoadTypes(Container container)
         {
-            container.Register<AdventureWorks2017Entities, AdventureWorks2017Entities>();
+
+            container.Register<AdventureWorks2017Context>(() => new AdventureWorks2017Context());
 
             container.Register<IProductService, ProductService>();
         }

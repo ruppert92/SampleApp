@@ -8,11 +8,11 @@ namespace SampleApp.Services.Factories
 {
     public static partial class Factory
     {
-        public static Core.Models.Product CreateProductDTO(EF.Product input)
+        public static Core.Models.Product CreateProductDTO(Data.Product input)
         {
             return input == null ? null : new Core.Models.Product()
             {
-                ProductID = input.ProductID,
+                ProductID = input.ProductId,
                 Name = input.Name,
                 ProductNumber = input.ProductNumber,
                 MakeFlag = input.MakeFlag,
@@ -30,12 +30,12 @@ namespace SampleApp.Services.Factories
                 ProductLine = input.ProductLine,
                 Class = input.Class,
                 Style = input.Style,
-                ProductSubcategoryID = input.ProductSubcategoryID,
-                ProductModelID = input.ProductModelID,
+                ProductSubcategoryID = input.ProductSubcategoryId,
+                ProductModelID = input.ProductModelId,
                 SellStartDate = input.SellStartDate,
                 SellEndDate = input.SellEndDate,
                 DiscontinuedDate = input.DiscontinuedDate,
-                rowguid = input.rowguid,
+                rowguid = input.Rowguid,
                 ModifiedDate = input.ModifiedDate,
             };
         }

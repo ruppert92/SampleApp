@@ -1,4 +1,4 @@
-﻿using SampleApp.Services.EF;
+﻿using SampleApp.Services.Data;
 using SampleApp.Utilities.SimpleInjector;
 using System;
 using System.Collections.Generic;
@@ -10,14 +10,14 @@ namespace SampleApp.Services.Services
 {
     public abstract class ServiceBase
     {
-        private AdventureWorks2017Entities _adventureWorksEntities;
+        private AdventureWorks2017Context _adventureWorksEntities;
 
-        protected AdventureWorks2017Entities AdventrueWorksEntites
+        protected AdventureWorks2017Context AdventrueWorksEntites
         {
             get
             {
                 if (_adventureWorksEntities == null)
-                    _adventureWorksEntities = SimpleInjectorAccessor.Container.GetInstance<AdventureWorks2017Entities>();
+                    _adventureWorksEntities = SimpleInjectorAccessor.Container.GetInstance<AdventureWorks2017Context>();
 
                 return _adventureWorksEntities;
             }
